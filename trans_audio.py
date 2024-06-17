@@ -120,7 +120,7 @@ def format_file_extension(files_param):
 if __name__ == "__main__":
     model_type = "medium"
     audio_file_type = "m4a"
-    temp_file_path = r"C:\Users\A\Desktop"
+    temp_file_folder = r"C:\Users\A\Desktop"
     source_folder = r'D:\Audios'
     text_output_folder = r'D:\AudioToText'
 
