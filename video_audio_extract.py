@@ -107,8 +107,8 @@ if __name__ == "__main__":
 
     file_types = ['mov', 'mp4']
     # 指定源文件夹和目标文件夹路径
-    source_folder = r"H:\增添\tempVideo"
-    audio_folder = r'H:\增添\tempAudio'
+    source_folder = r"E:\Video"
+    audio_folder = r"E:\Audio"
     # 遍历源文件夹中的所有文件和子文件夹
     exception_files = []
     files = expand_folder_get_item_list(source_folder)
