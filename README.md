@@ -1,11 +1,117 @@
-### trans_audio.py Usage:  
-#### 1. model_type: See https://github.com/openai/whisper/blob/main/README.md#available-models-and-languages  
-#### 2. audio_file_type: Audio file extension name.  
-#### 3. temp_file_folder: Any path.  
-#### 4. source_folder: Path where audio files locate.  
-#### 5. text_output_folder: Output text file directly, won't create new folder.  
-  
-### video_audio_extract.py Usage:  
-#### 1. file_types: Video file extension names.  
-#### 2. source_folder: Path where video files locate.  
-#### 5. audio_folder: Output directly, won't create new folder.
+Mainly supports python version 3.9. | 主要支持蟒蛇3.9版本。  
+Encountering errors in terminal: Run scripts in patch folder. | 终端中遇到错误：运行patch文件夹中手稿。  
+
+Audio transcribe application parameters explain: | 音频转写应用参数释义：  
+1. model_type option list: | model_type 选项列表：  
+tiny.en: Occupation of tiny spaces, transcribe for English. | 微小空间的占用，面向英文的转写。
+tiny: Occupation of tiny spaces. | 微小空间的占用。
+base.en,base,small.en,small,medium.en,medium,large-v1,large-v2,large-v3,lare,large-v3-turbo,turbo  
+2. audio_file_types: List of audio file suffix. | 音频文件后缀的列表。  
+3. temp_file_folder: Any path that ends with folder. | 任何的文件夹结尾的路径。
+4. audio_folder: Folder path where audio files locate.  | 音频文件位置的文件夹路径。
+5. text_output_folder: Output folder of text file. | 文本文件的输出文件夹。  
+6. slice_duration: The time interval for slicing audio files by minute unit. | 音频文件的分钟单位切分的时间间隔。  
+7. output_language: Abbreviation of output language | 输出语言的缩写。  
+LANGUAGES = {
+    "en": "english",
+    "zh": "chinese",
+    "de": "german",
+    "es": "spanish",
+    "ru": "russian",
+    "ko": "korean",
+    "fr": "french",
+    "ja": "japanese",
+    "pt": "portuguese",
+    "tr": "turkish",
+    "pl": "polish",
+    "ca": "catalan",
+    "nl": "dutch",
+    "ar": "arabic",
+    "sv": "swedish",
+    "it": "italian",
+    "id": "indonesian",
+    "hi": "hindi",
+    "fi": "finnish",
+    "vi": "vietnamese",
+    "he": "hebrew",
+    "uk": "ukrainian",
+    "el": "greek",
+    "ms": "malay",
+    "cs": "czech",
+    "ro": "romanian",
+    "da": "danish",
+    "hu": "hungarian",
+    "ta": "tamil",
+    "no": "norwegian",
+    "th": "thai",
+    "ur": "urdu",
+    "hr": "croatian",
+    "bg": "bulgarian",
+    "lt": "lithuanian",
+    "la": "latin",
+    "mi": "maori",
+    "ml": "malayalam",
+    "cy": "welsh",
+    "sk": "slovak",
+    "te": "telugu",
+    "fa": "persian",
+    "lv": "latvian",
+    "bn": "bengali",
+    "sr": "serbian",
+    "az": "azerbaijani",
+    "sl": "slovenian",
+    "kn": "kannada",
+    "et": "estonian",
+    "mk": "macedonian",
+    "br": "breton",
+    "eu": "basque",
+    "is": "icelandic",
+    "hy": "armenian",
+    "ne": "nepali",
+    "mn": "mongolian",
+    "bs": "bosnian",
+    "kk": "kazakh",
+    "sq": "albanian",
+    "sw": "swahili",
+    "gl": "galician",
+    "mr": "marathi",
+    "pa": "punjabi",
+    "si": "sinhala",
+    "km": "khmer",
+    "sn": "shona",
+    "yo": "yoruba",
+    "so": "somali",
+    "af": "afrikaans",
+    "oc": "occitan",
+    "ka": "georgian",
+    "be": "belarusian",
+    "tg": "tajik",
+    "sd": "sindhi",
+    "gu": "gujarati",
+    "am": "amharic",
+    "yi": "yiddish",
+    "lo": "lao",
+    "uz": "uzbek",
+    "fo": "faroese",
+    "ht": "haitian creole",
+    "ps": "pashto",
+    "tk": "turkmen",
+    "nn": "nynorsk",
+    "mt": "maltese",
+    "sa": "sanskrit",
+    "lb": "luxembourgish",
+    "my": "myanmar",
+    "bo": "tibetan",
+    "tl": "tagalog",
+    "mg": "malagasy",
+    "as": "assamese",
+    "tt": "tatar",
+    "haw": "hawaiian",
+    "ln": "lingala",
+    "ha": "hausa",
+    "ba": "bashkir",
+    "jw": "javanese",
+    "su": "sundanese",
+    "yue": "cantonese",
+}
+
